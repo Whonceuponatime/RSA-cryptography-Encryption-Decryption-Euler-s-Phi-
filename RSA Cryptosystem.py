@@ -1,7 +1,8 @@
 #RSA Cryptosystem
-print("P")
+#gcd and Euler's Phi function from https://www.geeksforgeeks.org/eulers-totient-function/
+print("P value: ", end = "")
 p = input()
-print("Q")
+print("Q value: ", end="")
 q = input()
 n = int(p)*int(q)
 
@@ -21,15 +22,15 @@ def phi_func(x):
         n = [y for y in range(1,x) if is_coprime(x,y)]
         return len(n)
 phi_n = (phi_func(n))
-print("Phi")
+print("Phi = ", end ="")
 print(phi_n)
-print("Public Key")
+print("Public Key: ", end ="")
 public_key = int(input())
-print("Private Key")
+print("Private Key: ", end ="")
 private_key = int(input())
-print("Message")
+print("Message: ", end = "")
 message = int(input())
-def enc(public, m):
+def enc(public, m): 
     c = (m**public)%n
     print("Encrypted")
     print(c)
